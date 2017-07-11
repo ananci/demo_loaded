@@ -17,7 +17,9 @@ def load_modules():
                     methods[cl_name] = cl()
     return methods
 
+def load_and_manually_class_find():
+    methods = load_modules()
+    for method, obj in methods.items():
+        print'{}: {}'.format(obj.name, obj.help_string)
 
-methods = load_modules()
-for method, obj in methods.items():
-    print'{}: {}'.format(obj.name, obj.help_string)
+load_and_manually_class_find()
